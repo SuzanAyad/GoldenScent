@@ -30,8 +30,7 @@ public class S01_AddProduct extends SetupClass{
     @And("user select product")
     public void userSelectProduct() {
         productsPage.selectProduct();
-        productsPage.swipe();
-
+        
     }
 
     @And("user select color")

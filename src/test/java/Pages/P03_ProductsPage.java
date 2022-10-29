@@ -34,43 +34,6 @@ public class P03_ProductsPage {
         productItem().click();
     }
 
-    public void swipe(){
-
-        final int ANIMATION_TIME = 200; // ms
-
-        final int PRESS_TIME = 200; // ms
-
-        int edgeBorder;
-        PointOption pointOptionStart, pointOptionEnd;
-        Rectangle rect = driver.findElement(By.id("iv_view")).getRect();
-        edgeBorder = 0;
-        pointOptionStart = PointOption.point(rect.x + rect.width - edgeBorder,
-                rect.y + rect.height / 2);
-        pointOptionEnd = PointOption.point(rect.x + edgeBorder,
-                rect.y + rect.height / 2);
-
-        // execute swipe using TouchAction
-        try {
-            new TouchAction(driver)
-                    .press(pointOptionStart)
-                    // a bit more reliable when we add small wait
-                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(PRESS_TIME)))
-                    .moveTo(pointOptionEnd)
-                    .release().perform();
-        } catch (Exception e) {
-            System.err.println("swipeElementAndroid(): TouchAction FAILED\n" + e.getMessage());
-            return;
-        }
-
-        // always allow swipe action to complete
-        try {
-            Thread.sleep(ANIMATION_TIME);
-        } catch (InterruptedException e) {
-            // ignore
-        }
-
-
-    }
 
     public AndroidElement color() {
         return (AndroidElement) driver.findElement(By.xpath("//android.widget.RelativeLayout[@index='2']"));
