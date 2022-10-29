@@ -39,7 +39,7 @@ public class SetupClass {
 
 
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
         homePage = new P01_HomePage();
         categoriesPage = new P02_CategoriesPage();

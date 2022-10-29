@@ -39,7 +39,6 @@ public class P02_CategoriesPage {
 
         AndroidElement element = (AndroidElement) driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"" + categoryName + "\").instance(0))"));
         element.click();
-        //AndroidTouchAction action = new AndroidTouchAction(driver);
         action.tap(ElementOption.element(element)).perform();
 
     }
